@@ -1,0 +1,10 @@
+server:
+  applicationConnectors:
+  - type: http
+    port: 8888
+    bindHost: 127.0.0.1
+
+logging:
+  level: INFO
+  loggers:
+    spaceboys: DEBUG

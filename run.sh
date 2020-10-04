@@ -1,0 +1,1 @@
+java -jar spaceboys_wms_server-1.0-SNAPSHOT.jar server config.yml
