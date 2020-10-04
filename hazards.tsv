@@ -1,0 +1,7 @@
+###layer	####date	x	y	size	intensity   comment
+#SB_HazardX	2020-10-04	0	0	10	1   test1
+#SB_HazardX	2020-10-04	50	50	5	0.3 test2
+SB_HazardX	2020-10-03	2.346941	48.858884	2.1	1	Paris
+SB_HazardX	2020-10-03	-73.979635	40.697150	8.3	0.5	New York
+SB_HazardX	2020-10-03	150.801784	-33.769650	5.3	1	Sydney
+SB_HazardX	2020-10-04	150.801784	-33.769650	5.3	0.6	Sydney
