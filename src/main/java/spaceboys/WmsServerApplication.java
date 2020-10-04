@@ -83,6 +83,10 @@ public class WmsServerApplication extends Application<WmsServerConfiguration> {
                 hazard.setIntensity(intensity);
                 hazard.setSize(size);
 
+                hazard.setR(Integer.parseInt(splits[6]));
+                hazard.setG(Integer.parseInt(splits[7]));
+                hazard.setB(Integer.parseInt(splits[8]));
+
                 List<Hazard> layerHazards = hazards.get(layer);
                 if (layerHazards == null) {
                     layerHazards = new ArrayList<>();

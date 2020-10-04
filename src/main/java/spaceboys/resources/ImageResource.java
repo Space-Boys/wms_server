@@ -34,6 +34,7 @@ public class ImageResource {
                              @QueryParam("BBOX") String req_bbox) throws IOException {
 
         boolean debug = req_debug!=null;
+        //boolean debug = true;
         int imageWidth = Integer.parseInt(req_width);
         int imageHeight = Integer.parseInt(req_height);
 
@@ -60,7 +61,6 @@ public class ImageResource {
             message = req_bbox;
             stringWidth = fontMetrics.stringWidth(message);
             ig2.drawString(message, (imageWidth - stringWidth) / 2, imageHeight / 2 + 6 * (stringHeight / 4));
-
 
             double x_avg = (displayBox.getX1() + displayBox.getX2()) / 2.0;
             int c1 = (int) (((x_avg + 180.0) / 360.0) * 255);
@@ -93,8 +93,10 @@ public class ImageResource {
                     double hazardBoxY = (displayBox.getY2() - hazard.getY()) * imageHeight / boxHeight;
                     double hazardBoxHeight = (hazard.getSize()) * imageHeight / boxHeight;
 
-                    ig2.setPaint(new Color((float) (hazard.getIntensity()), 0.1f, 0.1f));
-                    ig2.fillOval((int) (hazardBoxX - hazardBoxWidth / 2), (int) (hazardBoxY - hazardBoxHeight / 2), (int) hazardBoxWidth, (int) hazardBoxHeight);
+                    //ig2.setPaint(new Color((float) (hazard.getIntensity()), 0.1f, 0.1f));
+                    ig2.setPaint(new Color((int) (hazard.getR()*hazard.getIntensity()), (int) (hazard.getG()*hazard.getIntensity()), (int) (hazard.getB()*hazard.getIntensity())));
+                    //ig2.fillOval((int) (hazardBoxX - hazardBoxWidth / 2), (int) (hazardBoxY - hazardBoxHeight / 2), (int) hazardBoxWidth, (int) hazardBoxHeight);
+                    ig2.fillRect((int) (hazardBoxX - hazardBoxWidth / 2), (int) (hazardBoxY - hazardBoxHeight / 2), (int) hazardBoxWidth, (int) hazardBoxHeight);
                 }
             }
         }
